@@ -23,16 +23,13 @@
   "homepage": "https://github.com/bcoin-org/bledger#readme",
   "scripts": {
     "browserify": "browserify -s bledger lib/bledger.js | uglifyjs -c > bledger.js",
-    "clean": "rm -rf bledger.js build/vendor* .config/certs/* ./docs ./coverage",
+    "clean": "rm -rf bledger.js .certs/* ./docs ./coverage",
     "lint": "eslint lib/ test/ || exit 0",
-    "lint-ci": "eslint lib/ test/",
+    "lint-ci": "eslint lib/ test/ examples/",
     "test": "bmocha --reporter spec test/*-test.js",
     "test-ci": "nyc --reporter=lcov --reporter=text -a -n 'lib/**/*.js' npm test",
     "test-hid": "bmocha --reporter spec test/device/hid-test.js",
     "test-u2f": "./scripts/bmocha-chrome test/device/u2f-test.js",
-    "webpack": "webpack --config .config/webpack.js",
-    "webpack-dev": "webpack --config .config/webpack.dev.js",
-    "webpack-devdeps": "webpack --config .config/webpack.devdeps.js",
     "docs": "jsdoc -c jsdoc.json",
     "cover": "nyc -a -n 'lib/**/*.js' npm test"
   },
@@ -60,10 +57,5 @@
   },
   "engines": {
     "node": ">=8.0.0"
-  },
-  "browserify": {
-    "transform": [
-      "babelify"
-    ]
   }
 }
