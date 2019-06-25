@@ -37,7 +37,7 @@
     "./lib/bledger": "./lib/bledger-browser.js"
   },
   "dependencies": {
-    "bcrypto": "^3.1.6",
+    "bcrypto": "^4.0.1",
     "blgr": "~0.1.7",
     "bmutex": "~0.1.6",
     "bsert": "~0.0.10",
